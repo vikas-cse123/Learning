@@ -1,0 +1,59 @@
+class CreateUser {
+    constructor(firstName, lastName, age) {
+        this._firstName = firstName
+        this.lastName = lastName
+        this.age = age
+
+    }
+    birthYear() {
+        return new Date().getFullYear() - this.age;
+    };
+    fullName() {
+        return this._firstName + this.lastName;
+    };
+}
+
+
+
+
+//we are able to modify property here
+// there was no way to create private field in js few year ago
+// so we put _ brfore the variable name it indicates that you should not touvh that property because it is private 
+// but there was no restriction anyone can change it
+// example- firstName  _firstName
+const user1 = new CreateUser("vikas", "sahni", 21);
+console.log(user1);
+console.log(user1._firstName);
+user1._firstName = "-"
+console.log(user1._firstName);
+
+
+// JS introduced private field few time ago. if a property is private property then we cant even change it by any way
+class CreateUser2 {
+    #firstName
+    constructor(firstName, lastName, age) {
+        this.#firstName = firstName
+        this.lastName = lastName
+        this.age = age
+
+    }
+    hi="hello ji"
+    birthYear() {
+        return new Date().getFullYear() - this.age;
+    };
+    fullName() {
+        return this.#firstName + this.lastName;
+    };
+}
+const user2 = new CreateUser2("akash", "sahni", 23);
+const user3 = new CreateUser2("yadav", "umesh", 230);
+
+console.log("**************************************");
+
+console.log(user2);
+//user2.#firstName=""   // giving error: Private field '#firstName' must be declared in an enclosing class
+// Yes, due to recent updates in the DevTools now you'll be able access the private properties using # in the console.
+// But if you try to access private property in the JavaScript file it will give error.
+
+
+
