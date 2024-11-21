@@ -15,4 +15,5 @@ const user1 = new CreateUser("vikas", "sahni", 21);
 const user2 = new CreateUser("akash", "sahni", 23);
 const user3 = new CreateUser("sagar", "sahni", 18);
 
-// now only problem is that we are setting prototype outside
+// now only problem is that we are setting prototype property one by one.
+// and huamra code ek jaga par nahi hai
